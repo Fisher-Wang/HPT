@@ -11,6 +11,8 @@ from .envs.mujoco.sawyer_xyz.test_scripted_policies import (
     ALL_ENVS,
     test_cases_latest_nonoise,
 )
+from .envs.mujoco.sawyer_xyz.sawyer_xyz_env import SawyerXYZEnv
+from metaworld.policies.policy import Policy
 
 import torch
 from collections import OrderedDict
@@ -223,7 +225,7 @@ class RolloutRunner:
 
 
 @torch.no_grad()
-def expert_trajectory_generator(env, policy, camera_name="view_1"):
+def expert_trajectory_generator(env: SawyerXYZEnv, policy: Policy, camera_name="view_1"):
     """generate a trajectory rollout from the policy and a metaworld environment"""
     env.reset()
     env.reset_model()

@@ -376,7 +376,7 @@ def get_clip_embeddings(image, language="", device="cuda", max_length=77, image_
 def get_t5_embeddings(language, per_token=True, max_length=16, device="cpu"):
     """Get T5 embedding"""
     global global_language_model, global_language_processor
-    if global_language_model is None:
+    if global_language_model is None or global_language_processor is None:
         global_language_model = T5Model.from_pretrained("t5-base").to(device)
         global_language_processor = T5Tokenizer.from_pretrained("t5-base")
 

@@ -45,6 +45,17 @@ export MUJOCO_GL=egl
 
 </details>
 
+```
+pip install ipykernel
+pip install -U typing-extensions
+pip install python-dotenv
+pip install "mujoco-py<2.2,>=2.1"
+pip install dm-control==1.0.5
+pip install git+https://github.com/Farama-Foundation/Metaworld.git@29fe5d6d95cf9ad86f63eac38db8c0aef3837994
+pip install sentencepiece
+sudo apt-get install patchelf
+```
+
 ## 🚶 Usage
 0. Check out ``quickstart.ipynb`` for how to use the pretrained HPTs.
 1. ```python -m hpt.run``` train policies on each environment. Add `+mode=debug`  for debugging.
@@ -117,5 +128,3 @@ year      = {2024}
 If you have any questions, feel free to contact me through email (liruiw@mit.edu). Enjoy!
 
 ![](doc/framework.png)
-
-
